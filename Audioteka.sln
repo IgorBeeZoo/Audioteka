@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "Demo\Demo.csproj", "{C85A7C0D-9AB5-4A69-9AF4-55209E95DB50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo", "Demo\Demo.csproj", "{C85A7C0D-9AB5-4A69-9AF4-55209E95DB50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{128BD24A-809F-4ED8-A39B-73D12F9D0DD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{128BD24A-809F-4ED8-A39B-73D12F9D0DD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDomain", "TestDomain\TestDomain.csproj", "{D56319F2-C89F-410A-8C59-DBE696FB8687}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestDomain", "TestDomain\TestDomain.csproj", "{D56319F2-C89F-410A-8C59-DBE696FB8687}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
