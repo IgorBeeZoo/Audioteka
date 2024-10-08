@@ -11,7 +11,7 @@ namespace TestDomain
     public class ShelfTest
     {
    /// <summary>
-   /// Тест на Tostring
+   /// Тест на Tostring.
    /// </summary>
         [Test]
         public void ToString_ValidData_Succes()
@@ -32,6 +32,7 @@ namespace TestDomain
         {
             Assert.Throws<ArgumentNullException>(() => _ = new Shelf(null!));
         }
+
         /// <summary>
         ///  Тесты на метод Equals
         /// </summary>
@@ -48,8 +49,6 @@ namespace TestDomain
             var actual = shelf1.Equals(shelf2);
 
             Assert.That(actual, Is.EqualTo(expected));
-
-
         }
     }
 }
