@@ -23,11 +23,11 @@ namespace Domain
         public Author(
             string familyName,
             string firstName,
-            string? patronicName,
-            DateOnly? dateBirth,
-            DateOnly? dateDeath)
+            string? patronicName = null,
+            DateOnly? dateBirth = null,
+            DateOnly? dateDeath = null)
         {
-            this.Id = Guid.NewGuid();
+            this.Id = Guid.Empty;
             this.FamilyName = familyName.TrimOrNull() ?? throw new ArgumentNullException(nameof(familyName));
             this.FirstName = firstName.TrimOrNull() ?? throw new ArgumentNullException(nameof(firstName));
             this.PatronicName = patronicName?.TrimOrNull();
@@ -65,77 +65,38 @@ namespace Domain
         /// </summary>
         public DateOnly? DateDeath { get; }
 
+        /// <summary>
+        /// Альбомы автора.
+        /// </summary>
+        public ISet<Album> Albums { get; } = new HashSet<Album>();
+
         /// <inheritdoc/>
         public bool Equals(Author? other)
         {
-            if (other is null)
-            {
-                return false;
-            }
-
-            if (ReferenceEquals(this, other))
-            {
-                return true;
-            }
-
-            if (this.FirstName != other.FirstName
-                || this.FamilyName != other.FamilyName)
-            {
-                return false;
-            }
-
-            if ((this.PatronicName is not null) && (this.PatronicName != other.PatronicName))
-            {
-                return false;
-            }
-
-            if ((this.DateBirth is not null) && (this.DateBirth != other.DateBirth))
-            {
-                return false;
-            }
-
-            if ((this.DateDeath is not null) && (this.DateDeath != other.DateDeath))
-            {
-                return false;
-            }
-
-            return true;
+            return other is not null
+                && this.FamilyName == other.FamilyName
+                && this.FirstName == other.FirstName
+                && this.PatronicName == other.PatronicName
+                && this.DateBirth == other.DateBirth
+                && this.DateDeath == other.DateDeath;
         }
 
         /// <inheritdoc/>
         public override bool Equals(object? obj)
         {
             return this.Equals(obj as Author);
-        }
+         }
 
         /// <inheritdoc/>
-        public override int GetHashCode()
+        public override int GetHashCode() =>
+            HashCode.Combine(this.FamilyName, this.FirstName, this.PatronicName, this.DateBirth, this.DateDeath);
+
+        /// <inheritdoc/>
+        public override string ToString()
         {
-            var hashCode = this.FamilyName.GetHashCode()
-                * this.FirstName.GetHashCode();
-
-            if (this.PatronicName is not null)
-            {
-                hashCode *= this.PatronicName.GetHashCode();
-            }
-
-            if (this.DateBirth is not null)
-            {
-                hashCode *= this.DateBirth.GetHashCode();
-            }
-
-            if (this.DateDeath is not null)
-            {
-                hashCode *= this.DateDeath.GetHashCode();
-            }
-
-            return hashCode;
-        }
-
-        /// <inheritdoc/>
-        public override string ToString() =>
-            (this.PatronicName is null)
+            return this.PatronicName is null
             ? $"{this.FamilyName} {this.FirstName} {this.PatronicName}"
             : $"{this.FamilyName} {this.FirstName}";
+        }
     }
 }

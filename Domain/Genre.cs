@@ -1,4 +1,6 @@
-﻿namespace Domain
+﻿using Staff;
+
+namespace Domain
 {
     /// <summary>
     /// Класс жанр.
@@ -12,8 +14,8 @@
         /// <exception cref="ArgumentNullException">Если название <see langword="null"> </exception>.
         public Genre(string name)
         {
-            this.Id = Guid.NewGuid();
-            this.Name = name ?? throw new ArgumentNullException(nameof(name));
+            this.Id = Guid.Empty;
+            this.Name = name.TrimOrNull() ?? throw new ArgumentNullException(nameof(name));
         }
 
         /// <summary>

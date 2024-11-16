@@ -5,6 +5,7 @@
 namespace TestDomain
 {
     using Domain;
+
     /// <summary>
     /// Тесты для класса полка <see cref="Domain.Shelf"/>.
     /// </summary>
@@ -25,8 +26,8 @@ namespace TestDomain
         }
 
         /// <summary>
-        /// Тест на конструктор с параметром <see langword="null"> 
-        /// </summary>
+        /// Тест на конструктор с параметром <see langword="null">.
+        /// </summary>.
         [Test]
         public void Ctor_NullName_ExpectedException()
         {
@@ -34,7 +35,7 @@ namespace TestDomain
         }
 
         /// <summary>
-        ///  Тесты на метод Equals
+        ///  Тесты на метод Equals.
         /// </summary>
         /// <param name="name1"> Название первой полки</param>
         /// <param name="name2">Название второй полки</param>

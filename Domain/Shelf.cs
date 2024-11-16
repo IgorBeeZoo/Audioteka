@@ -16,7 +16,7 @@ namespace Domain
         /// <exception cref="ArgumentNullException">Если название <see langword="null"> </exception>.
         public Shelf(string name)
         {
-            this.Id = Guid.NewGuid();
+            this.Id = Guid.Empty;
             this.Name = name ?? throw new ArgumentNullException(nameof(name));
         }
 
@@ -29,6 +29,11 @@ namespace Domain
         /// Название полки.
         /// </summary>
         public string Name { get; }
+
+        /// <summary>
+        /// Ссылка на класс Album.
+        /// </summary>
+        public ISet<Album> Albums { get; } = new HashSet<Album>();
 
         /// <inheritdoc/>
         public bool Equals(Shelf? other)

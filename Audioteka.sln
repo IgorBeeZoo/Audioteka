@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestDomain", "TestDomain\TestDomain.csproj", "{D56319F2-C89F-410A-8C59-DBE696FB8687}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Staff", "Staff\Staff.csproj", "{3F1D55AE-58A8-4126-8FC4-4B14659D9DA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Staff", "Staff\Staff.csproj", "{3F1D55AE-58A8-4126-8FC4-4B14659D9DA8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_stylecop", "_stylecop", "{5745AD5B-7B7C-487E-B088-68275C635273}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,6 +1,8 @@
-﻿// <copyright file="Album.cs" company="Бежук И.А.">
+﻿// <copyright file="Album.cs" company="Бежук И.А., Козлов Я.А., Горшков В.***., Литвиненкова А.П., Минаева Е.***.">
 // Copyright (c) Васильева М.А.. All rights reserved.
 // </copyright>
+
+using Staff;
 
 namespace Domain
 {
@@ -12,8 +14,8 @@ namespace Domain
         /// <param name="name"></param>
         public Album(string name)
         {
-            this.Id = Guid.NewGuid();
-            this.Name = name ?? throw new ArgumentNullException(nameof(name));
+            this.Id = Guid.Empty;
+            this.Name = name.TrimOrNull() ?? throw new ArgumentNullException(nameof(name));
         }
 
         /// <summary>
@@ -27,12 +29,6 @@ namespace Domain
         public string Name { get; }
 
         /// <summary>
-        /// Количество песен в альбоме.
-        /// </summary>
-
-        public int Songs_Numbers { get; }
-
-        /// <summary>
         /// Дата релиза альбома.
         /// </summary>
         public DateOnly Date_Release { get; }
@@ -40,11 +36,9 @@ namespace Domain
         /// <summary>
         /// Автор.
         /// </summary>
-        public ISet<Author> Author { get; set} = new HashSet<Author>();
+        public Author Author { get; set; }
 
         /// <inheritdoc/>
-
-        // Присвоение нового имени при добавлении элемента.
         public bool Equals(Album? other)
         {
             if (other is null)

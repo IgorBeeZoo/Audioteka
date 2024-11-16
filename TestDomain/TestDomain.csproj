@@ -26,12 +26,12 @@
   </ItemGroup>
 
 	<PropertyGroup>
-		<CodeAnalysisRuleSet>$(SolutionDir)_stylecop\test.ruleset</CodeAnalysisRuleSet>
+		<CodeAnalysisRuleSet>$(SolutionDir)_stylecop\tests.ruleset</CodeAnalysisRuleSet>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<AdditionalFiles Include="$(SolutionDir)_stylecop\stylecop.json" Link="_stylecop\stylecop.json" />
-		<AdditionalFiles Include="$(SolutionDir)_stylecop\test.ruleset" Link="_stylecop\test.ruleset" />
+		<AdditionalFiles Include="$(SolutionDir)_stylecop\tests.ruleset" Link="_stylecop\test.ruleset" />
 	</ItemGroup>
 
 	<ItemGroup>
