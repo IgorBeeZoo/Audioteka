@@ -27,10 +27,11 @@ namespace TestDomain
             DateOnly? dateDeath1,
             DateOnly? dateDeath2)
         {
+            // Arrange
             var author1 = new Author("Шклярский", "Эдмунд", "Мечиславович", dateBirth1, dateDeath1);
             var author2 = new Author("Магомаев", "Муслим", "Магометович", dateBirth2, dateDeath2);
 
-            //Arrange
+            // Act & Assert
             Assert.That(author1, Is.Not.EqualTo(author2));
         }
 
@@ -39,6 +40,11 @@ namespace TestDomain
             yield return new TestCaseData(new DateOnly(1955, 09, 26), null);
             yield return new TestCaseData(null, new DateOnly(2008, 10, 25));
             yield return new TestCaseData(null, null);
+        }
+
+        private static IEnumerable<TestCaseData> ValidNullDates()
+        {
+            yield return new TestCaseData(null, null, null, null);
         }
     }
 }
