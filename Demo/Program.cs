@@ -14,8 +14,9 @@ namespace Demo
     {
         private static void Main(string[] args)
         {
-            var shelf = new Shelf("Первая пока");
+            var shelf = new Shelf("Первая полка");
             Console.WriteLine(shelf);
+
         }
     }
 }
