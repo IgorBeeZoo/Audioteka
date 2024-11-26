@@ -1,5 +1,5 @@
-﻿// <copyright file="Author.cs" company="<Бежук И.А.>">
-// Copyright (c) Бежук И.А.. All rights reserved.
+﻿// <copyright file="Author.cs" company="Бежук, Козлов, Горшков, Минаева, Литвиненкова">
+// Copyright (c) Бежук, Козлов, Горшков, Минаева, Литвиненкова. All rights reserved.
 // </copyright>
 
 namespace Domain
