@@ -1,4 +1,7 @@
-﻿
+﻿// <copyright file="AuthorTest.cs" company="Бежук, Козлов, Горшков, Минаева, Литвиненкова">
+// Copyright (c) Бежук, Козлов, Горшков, Минаева, Литвиненкова. All rights reserved.
+// </copyright>
+
 namespace TestDomain
 {
     using Domain;
@@ -12,6 +15,7 @@ namespace TestDomain
             var author2 = new Author("Кипелов", "Валерий", "Александрович");
             Assert.That(author1, Is.Not.EqualTo(author2));
         }
+
         [TestCase(null, "")]
         [TestCase("", null)]
         public void Ctor_WrongData_ExpectedException(string? familyName, string? firstName)
