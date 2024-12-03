@@ -9,10 +9,10 @@ namespace Domain
     /// <summary>
     /// Класс Автор.
     /// </summary>
-    public sealed class Author : IEquatable<Author>
+    public sealed class Album : IEquatable<Album>
     {
         /// <summary>
-        /// Инициализирует новый экземпляр класса <see cref="Author"/>.
+        /// Инициализирует новый экземпляр класса <see cref="Domain.Album"/>.
         /// </summary>
         /// <param name="familyName"> Фамилия.</param>
         /// <param name="firstName"> Имя. </param>
@@ -20,7 +20,7 @@ namespace Domain
         /// <param name="dateBirth"> Дата рождения. </param>
         /// <param name="dateDeath"> Дата смерти. </param>
         /// <exception cref="ArgumentNullException">Если имя или фамилия <see langword="null"/>.</exception>
-        public Author(
+        public Album(
             string familyName,
             string firstName,
             string? patronicName = null,
@@ -71,7 +71,7 @@ namespace Domain
         public ISet<Album> Albums { get; } = new HashSet<Album>();
 
         /// <inheritdoc/>
-        public bool Equals(Author? other)
+        public bool Equals(Album? other)
         {
             return other is not null
                 && this.FamilyName == other.FamilyName
@@ -84,7 +84,7 @@ namespace Domain
         /// <inheritdoc/>
         public override bool Equals(object? obj)
         {
-            return this.Equals(obj as Author);
+            return this.Equals(obj as Album);
          }
 
         /// <inheritdoc/>
