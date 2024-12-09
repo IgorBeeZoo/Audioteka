@@ -2,54 +2,54 @@
 // Copyright (c) Бежук, Козлов, Горшков, Минаева, Литвиненкова. All rights reserved.
 // </copyright>
 
-using System.Reflection;
-using Domain;
-using Microsoft.EntityFrameworkCore;
-
 namespace DataAccessLayer.Migrations
 {
+    using System.Reflection;
+    using Domain;
+    using Microsoft.EntityFrameworkCore;
+
     /// <summary>
-    /// Инициализирует новый экземпляр класса <see cref=DataContex">"/>
+    /// Инициализирует новый экземпляр класса <see cref=DataContext">"/>
     /// </summary>
-    public sealed class DataContex : DbContext
+    public sealed class DataContext : DbContext
     {
-        public DataContex()
+        public DataContext(): base()
         { 
         }
 
-        public DataContex(DbContextOptions<DataContex> options):base(options) 
+        public DataContext(DbContextOptions<DataContext> options):base(options) 
         {
         }
 
         /// <summary>
         /// Альбомы.
         /// </summary>
-        public DbSet<Album> Albums { get; } = default!;
+        public DbSet<Author> Albums { get; init; } = default!;
 
         /// <summary>
         /// Авторы.
         /// </summary>
-        public DbSet<Album> Authors { get; } = default!;
+        public DbSet<Author> Authors { get; init; } = default!;
 
         /// <summary>
         /// Жанры.
         /// </summary>
-        public DbSet<Genre> Genres { get; } = default!;
+        public DbSet<Genre> Genres { get; init; } = default!;
 
         /// <summary>
         /// Полки.
         /// </summary>
-        public DbSet<Shelf> Shelves { get; } = default!;
+        public DbSet<Shelf> Shelves { get; init; } = default!;
 
         /// <summary>
         /// Полки.
         /// </summary>
-        public DbSet<Song> Songs { get; } = default!;
+        public DbSet<Song> Songs { get; init; } = default!;
 
         /// <inheritdoc/>
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("User ID=postgres;Password=1;Host=localhost;Port=5432;Database=Library;");
+            optionsBuilder.UseNpgsql("User ID=postgres;Password=1;Host=localhost;Port=5432;Database=Audioteka;");
         }
 
         /// <inheritdoc/>

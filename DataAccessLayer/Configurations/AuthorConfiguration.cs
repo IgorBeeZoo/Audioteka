@@ -8,10 +8,10 @@ namespace DataAccessLayer.Configurations
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-    public sealed class AuthorConfiguration : IEntityTypeConfiguration<Album>
+    public sealed class AuthorConfiguration : IEntityTypeConfiguration<Author>
     {
         /// <inheritdoc/>
-        public void Configure(EntityTypeBuilder<Album> builder)
+        public void Configure(EntityTypeBuilder<Author> builder)
         {
             _ = builder.HasKey(author => author.Id);
 
