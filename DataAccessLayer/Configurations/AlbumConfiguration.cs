@@ -10,9 +10,9 @@ namespace DataAccessLayer.Configurations
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-    public sealed class AlbumConfiguration : IEntityTypeConfiguration<Album>
+    public sealed class AlbumConfiguration : IEntityTypeConfiguration<Author>
     {
-        public void Configure(EntityTypeBuilder<Album> builder)
+        public void Configure(EntityTypeBuilder<Author> builder)
         {
             _ = builder.HasKey(album => album.Id);
             _ = builder.Property(album => album.Name)
