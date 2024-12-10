@@ -31,24 +31,25 @@ namespace Domain
         /// <summary>
         /// Дата релиза альбома.
         /// </summary>
-        public DateOnly Date_Release { get; }
+        public DateOnly DateRelease { get; }
 
         /// <summary>
         /// Автор.
         /// </summary>
-        public Album Author { get; set; }
+        public Author? Author { get; set; }
 
         /// <summary>
         /// Жанр.
         /// </summary>
-        public Album Genre { get; }
+        public Genre? Genre { get; set; }
 
-        public Album Shelf { get; }
+        public Shelf? Shelf { get; set; }
 
         /// <summary>
         /// Песни.
         /// </summary>
         public ISet<Song> Songs { get; } = new HashSet<Song>();
+
 
         /// <inheritdoc/>
         public bool Equals(Album? other)

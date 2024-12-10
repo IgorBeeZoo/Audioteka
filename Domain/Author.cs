@@ -68,7 +68,7 @@ namespace Domain
         /// <summary>
         /// Альбомы автора.
         /// </summary>
-        public ISet<Author> Albums { get; } = new HashSet<Author>();
+        public ISet<Album> Albums { get; } = new HashSet<Album>();
 
         /// <inheritdoc/>
         public bool Equals(Author? other)
