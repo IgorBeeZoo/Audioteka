@@ -9,7 +9,7 @@ namespace Domain
     public sealed class Album : IEquatable<Album>
     {
         /// <summary>
-        /// Инициализирует новый экземпляр класса <see cref="Album"/>.
+        /// Инициализирует новый экземпляр класса <see cref="Domain.Album"/>.
         /// </summary>
         /// <param name="name"></param>
         public Album(string name)
@@ -31,12 +31,25 @@ namespace Domain
         /// <summary>
         /// Дата релиза альбома.
         /// </summary>
-        public DateOnly Date_Release { get; }
+        public DateOnly DateRelease { get; }
 
         /// <summary>
         /// Автор.
         /// </summary>
-        public Author Author { get; set; }
+        public Author? Author { get; set; }
+
+        /// <summary>
+        /// Жанр.
+        /// </summary>
+        public Genre? Genre { get; set; }
+
+        public Shelf? Shelf { get; set; }
+
+        /// <summary>
+        /// Песни.
+        /// </summary>
+        public ISet<Song> Songs { get; } = new HashSet<Song>();
+
 
         /// <inheritdoc/>
         public bool Equals(Album? other)

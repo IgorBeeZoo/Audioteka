@@ -1,5 +1,5 @@
-﻿// <copyright file="Author.cs" company="<Бежук И.А.>">
-// Copyright (c) Бежук И.А.. All rights reserved.
+﻿// <copyright file="Author.cs" company="Бежук, Козлов, Горшков, Минаева, Литвиненкова">
+// Copyright (c) Бежук, Козлов, Горшков, Минаева, Литвиненкова. All rights reserved.
 // </copyright>
 
 namespace Domain
@@ -12,7 +12,7 @@ namespace Domain
     public sealed class Author : IEquatable<Author>
     {
         /// <summary>
-        /// Инициализирует новый экземпляр класса <see cref="Author"/>.
+        /// Инициализирует новый экземпляр класса <see cref="Domain.Author"/>.
         /// </summary>
         /// <param name="familyName"> Фамилия.</param>
         /// <param name="firstName"> Имя. </param>
