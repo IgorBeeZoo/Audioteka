@@ -6,13 +6,13 @@ using Staff;
 
 namespace Domain
 {
-    public sealed class Author : IEquatable<Author>
+    public sealed class Album : IEquatable<Album>
     {
         /// <summary>
-        /// Инициализирует новый экземпляр класса <see cref="Domain.Author"/>.
+        /// Инициализирует новый экземпляр класса <see cref="Domain.Album"/>.
         /// </summary>
         /// <param name="name"></param>
-        public Author(string name)
+        public Album(string name)
         {
             this.Id = Guid.Empty;
             this.Name = name.TrimOrNull() ?? throw new ArgumentNullException(nameof(name));
@@ -36,14 +36,14 @@ namespace Domain
         /// <summary>
         /// Автор.
         /// </summary>
-        public Author Author { get; set; }
+        public Album Author { get; set; }
 
         /// <summary>
         /// Жанр.
         /// </summary>
-        public Author Genre { get; }
+        public Album Genre { get; }
 
-        public Author Shelf { get; }
+        public Album Shelf { get; }
 
         /// <summary>
         /// Песни.
@@ -51,7 +51,7 @@ namespace Domain
         public ISet<Song> Songs { get; } = new HashSet<Song>();
 
         /// <inheritdoc/>
-        public bool Equals(Author? other)
+        public bool Equals(Album? other)
         {
             if (other is null)
             {
@@ -72,7 +72,7 @@ namespace Domain
         /// <inheritdoc/>
         public override bool Equals(object? obj)
         {
-            return this.Equals(obj as Author);
+            return this.Equals(obj as Album);
         }
 
         /// <inheritdoc/>
