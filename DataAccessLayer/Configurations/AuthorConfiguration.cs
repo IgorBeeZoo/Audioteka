@@ -32,9 +32,6 @@ namespace DataAccessLayer.Configurations
 
             _ = builder.Property(author => author.DateDeath)
                 .IsRequired(false);
-
-            _ = builder.Property(author => author.Albums)
-                .WithMany(author => author.Albums);
         }
     }
 }

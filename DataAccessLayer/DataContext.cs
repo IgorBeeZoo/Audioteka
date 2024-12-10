@@ -2,7 +2,7 @@
 // Copyright (c) Бежук, Козлов, Горшков, Минаева, Литвиненкова. All rights reserved.
 // </copyright>
 
-namespace DataAccessLayer.Migrations
+namespace DataAccessLayer
 {
     using System.Reflection;
     using Domain;
@@ -13,38 +13,38 @@ namespace DataAccessLayer.Migrations
     /// </summary>
     public sealed class DataContext : DbContext
     {
-        public DataContext(): base()
-        { 
+        public DataContext() : base()
+        {
         }
 
-        public DataContext(DbContextOptions<DataContext> options):base(options) 
+        public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
         }
 
         /// <summary>
         /// Альбомы.
         /// </summary>
-        public DbSet<Author> Albums { get; init; } = default!;
+        public DbSet<Author> Albums { get; init; }
 
         /// <summary>
         /// Авторы.
         /// </summary>
-        public DbSet<Author> Authors { get; init; } = default!;
+        public DbSet<Author> Authors { get; init; }
 
         /// <summary>
         /// Жанры.
         /// </summary>
-        public DbSet<Genre> Genres { get; init; } = default!;
+        public DbSet<Genre> Genres { get; init; }
 
         /// <summary>
         /// Полки.
         /// </summary>
-        public DbSet<Shelf> Shelves { get; init; } = default!;
+        public DbSet<Shelf> Shelves { get; init; }
 
         /// <summary>
         /// Полки.
         /// </summary>
-        public DbSet<Song> Songs { get; init; } = default!;
+        public DbSet<Song> Songs { get; init; }
 
         /// <inheritdoc/>
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

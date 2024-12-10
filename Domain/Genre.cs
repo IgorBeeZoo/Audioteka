@@ -23,6 +23,12 @@ namespace Domain
         /// </summary>
         public Guid Id { get; }
 
+
+        /// <summary>
+        /// Идентификатор.
+        /// </summary>
+        public ISet<Album> Albums{ get; } = new HashSet<Album>();
+
         /// <summary>
         /// Название полки.
         /// </summary>
