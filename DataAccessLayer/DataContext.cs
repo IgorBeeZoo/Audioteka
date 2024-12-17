@@ -49,7 +49,7 @@ namespace DataAccessLayer
         /// <inheritdoc/>
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("User ID=postgres;Password=1;Host=localhost;Port=5432;Database=Audioteka;");
+            optionsBuilder.UseNpgsql("User ID=postgres2;Password=1;Host=localhost;Port=5432;Database=Audioteka;");
         }
 
         /// <inheritdoc/>

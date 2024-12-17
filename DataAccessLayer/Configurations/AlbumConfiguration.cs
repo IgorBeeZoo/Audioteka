@@ -10,13 +10,16 @@
         {
             _ = builder.HasKey(album => album.Id);
             _ = builder.Property(album => album.Name)
+                .HasMaxLength(50)
                 .IsRequired();
 
             _ = builder.Property(album => album.DateRelease)
+                .HasMaxLength(50)
                 .IsRequired();
 
-            _ = builder.Property(album => album.Shelf)
-                .IsRequired(false);
+            _ = builder.HasOne(album => album.Shelf)
+                .WithMany(shelf => shelf.Albums)
+                .IsRequired();
 
             _ = builder.HasOne(album => album.Author)
                 .WithMany(author => author.Albums)

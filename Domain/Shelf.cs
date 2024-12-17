@@ -33,7 +33,7 @@ namespace Domain
         /// <summary>
         /// Ссылка на класс Album.
         /// </summary>
-        public ISet<Author> Albums { get; } = new HashSet<Author>();
+        public ISet<Album> Albums { get; } = new HashSet<Album>();
 
         /// <inheritdoc/>
         public bool Equals(Shelf? other)

@@ -11,8 +11,8 @@ namespace TestDomain
         [Test]
         public void Equalas_DifferentAuthors_False()
         {
-            var author1 = new Album("Шклярский", "Эдмунд", "Мечиславович");
-            var author2 = new Album("Кипелов", "Валерий", "Александрович");
+            var author1 = new Author("Шклярский", "Эдмунд", "Мечиславович");
+            var author2 = new Author("Кипелов", "Валерий", "Александрович");
             Assert.That(author1, Is.Not.EqualTo(author2));
         }
 
@@ -21,7 +21,7 @@ namespace TestDomain
         public void Ctor_WrongData_ExpectedException(string? familyName, string? firstName)
         {
             Assert.Throws<ArgumentNullException>(
-                () => _ = new Album(familyName!, firstName!));
+                () => _ = new Author(familyName!, firstName!));
         }
 
         [TestCaseSource(nameof(ValidNullDates))]
@@ -32,8 +32,8 @@ namespace TestDomain
             DateOnly? dateDeath2)
         {
             // Arrange
-            var author1 = new Album("Шклярский", "Эдмунд", "Мечиславович", dateBirth1, dateDeath1);
-            var author2 = new Album("Магомаев", "Муслим", "Магометович", dateBirth2, dateDeath2);
+            var author1 = new Author("Шклярский", "Эдмунд", "Мечиславович", dateBirth1, dateDeath1);
+            var author2 = new Author("Магомаев", "Муслим", "Магометович", dateBirth2, dateDeath2);
 
             // Act & Assert
             Assert.That(author1, Is.Not.EqualTo(author2));

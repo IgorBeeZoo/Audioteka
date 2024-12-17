@@ -26,7 +26,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Re
 		{128BD24A-809F-4ED8-A39B-73D12F9D0DD7} = {128BD24A-809F-4ED8-A39B-73D12F9D0DD7}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer.Tetst", "DataAccessLayer.Tetst\DataAccessLayer.Tetst.csproj", "{7380A285-D8C0-4BA8-88C1-E411DC32CF1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer.Test", "DataAccessLayer.Tetst\DataAccessLayer.Test.csproj", "{7380A285-D8C0-4BA8-88C1-E411DC32CF1D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

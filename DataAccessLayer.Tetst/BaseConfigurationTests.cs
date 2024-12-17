@@ -1,3 +1,7 @@
+// <copyright file="BaseConfigurationTests.cs" company="Бежук, Козлов, Горшков, Минаева, Литвиненкова">
+// Copyright (c) Бежук, Козлов, Горшков, Минаева, Литвиненкова. All rights reserved.
+// </copyright>
+
 namespace DataAccessLayer.Tests
 {
     using System;
