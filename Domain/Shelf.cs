@@ -1,13 +1,17 @@
-﻿// <copyright file="Class1.cs" company="Васильева М.А.">
-// Copyright (c) Васильева М.А.. All rights reserved.
+﻿// <copyright file="Shelf.cs" company="Бежук, Козлов, Горшков, Минаева, Литвиненкова">
+// Copyright (c) Бежук, Козлов, Горшков, Минаева, Литвиненкова. All rights reserved.
 // </copyright>
 
 namespace Domain
 {
+    using System;
+    using System.Collections.Generic;
+    using Staff;
+
     /// <summary>
-    /// Класс полка
+    /// Полка.
     /// </summary>
-    public sealed class Shelf : IEquatable<Shelf>
+    public sealed class Shelf : Entity<Shelf>, IEquatable<Shelf>
     {
         /// <summary>
         /// Инициализирует новый экземпляр класса <see cref="Shelf"/>.

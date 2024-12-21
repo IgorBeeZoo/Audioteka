@@ -6,7 +6,14 @@ using Staff;
 
 namespace Domain
 {
-    public sealed class Album : IEquatable<Album>
+    using System;
+    using System.Collections.Generic;
+    using Staff;
+
+    /// <summary>
+    /// Альбом.
+    /// </summary>
+    public sealed class Album : Entity<Album>, IEquatable<Album>
     {
         /// <summary>
         /// Инициализирует новый экземпляр класса <see cref="Domain.Album"/>.

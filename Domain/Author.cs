@@ -4,12 +4,14 @@
 
 namespace Domain
 {
+    using System;
+    using System.Collections.Generic;
     using Staff;
 
     /// <summary>
-    /// Класс Автор.
+    /// Автор.
     /// </summary>
-    public sealed class Author : IEquatable<Author>
+    public sealed class Author : Entity<Author>, IEquatable<Author>
     {
         /// <summary>
         /// Инициализирует новый экземпляр класса <see cref="Domain.Author"/>.
@@ -58,17 +60,17 @@ namespace Domain
         /// <summary>
         /// Дата рождения.
         /// </summary>
-        public DateOnly? DateBirth { get; }
+        public DateOnly? DateBirth { get; set; }
 
         /// <summary>
         /// Дата смерти.
         /// </summary>
-        public DateOnly? DateDeath { get; }
+        public DateOnly? DateDeath { get; set; }
 
         /// <summary>
         /// Альбомы автора.
         /// </summary>
-        public ISet<Album> Albums { get; } = new HashSet<Album>();
+        public ISet<Album> Albums { get; set; } = new HashSet<Album>();
 
         /// <inheritdoc/>
         public bool Equals(Author? other)
